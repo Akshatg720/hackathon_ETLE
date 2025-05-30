@@ -353,13 +353,6 @@
                 }
             });
             
-            // Add output names
-            document.querySelectorAll('.output-name').forEach(input => {
-                if (input.value) {
-                    columns.add(input.value);
-                }
-            });
-            
             // Update all WHERE column selects
             document.querySelectorAll('.where-column').forEach(select => {
                 const currentValue = select.value;
