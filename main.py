@@ -23,7 +23,7 @@ def run_etl(config_file: str) -> None:
         print("Starting Extract phase...")
         df = extract(config['extract'])
         print("Extract phase completed successfully.")
-        
+        print(df.head())
         # Set the dataframe for transform
         set_dataframe(df)
         
@@ -41,16 +41,8 @@ def run_etl(config_file: str) -> None:
         
         # Load phase
         print("Starting Load phase...")
-        if isinstance(df, pd.DataFrame):
-            # If the output is a DataFrame, save it to a temporary file
-            temp_file = "temp_output.csv"
-            df.to_csv(temp_file, index=False)
-            load(temp_file, config['load'])
-            # Clean up temporary file
-            Path(temp_file).unlink()
-        else:
-            # If the output is already a file (from restructure)
-            load(df, config['load'])
+        output_path = config['restructure']['output_path']
+        load(output_path, config['load'])
         print("Load phase completed successfully.")
         
         print("ETL process completed successfully!")

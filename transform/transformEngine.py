@@ -80,15 +80,15 @@ def transform(transform_config: Union[str, Dict]) -> pd.DataFrame:
             if operation == 'sum':
                 agg_df = df.groupby(group_by)[columns].sum()
                 agg_df.columns = [output_column]
-                df = df.merge(agg_df, on=group_by, how='left')
+                df = agg_df.reset_index()
             elif operation == 'mean':
                 agg_df = df.groupby(group_by)[columns].mean()
                 agg_df.columns = [output_column]
-                df = df.merge(agg_df, on=group_by, how='left')
+                df = agg_df.reset_index()
             elif operation == 'count':
                 agg_df = df.groupby(group_by)[columns].count()
                 agg_df.columns = [output_column]
-                df = df.merge(agg_df, on=group_by, how='left')
+                df = agg_df.reset_index()
                 
         elif transform_type == 'custom_file':
             file_path = transform['file_path']

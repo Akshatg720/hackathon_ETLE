@@ -2,6 +2,12 @@ import pandas as pd
 from typing import Dict, Union, List
 import json
 from pathlib import Path
+from datetime import datetime
+
+def datetime_handler(obj):
+    if isinstance(obj, (pd.Timestamp, datetime)):
+        return obj.isoformat()
+    raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
 
 def restructure(export_config: Union[str, Dict]) -> Union[pd.DataFrame, Dict, str]:
     """
@@ -24,6 +30,9 @@ def restructure(export_config: Union[str, Dict]) -> Union[pd.DataFrame, Dict, st
     
     export_format = export_config.get('format', 'dataframe')
     output_path = export_config.get('output_path')
+    
+    # Initialize df_export with the full dataframe
+    df_export = df.copy()
     
     # Handle column selection and renaming
     columns_config = export_config.get('columns', {})
@@ -49,7 +58,7 @@ def restructure(export_config: Union[str, Dict]) -> Union[pd.DataFrame, Dict, st
         # Write to file if output_path is provided
         if output_path:
             with open(output_path, 'w') as f:
-                json.dump(result, f, indent=2)
+                json.dump(result, f, indent=2, default=datetime_handler)
         return result
         
     elif export_format == 'csv':

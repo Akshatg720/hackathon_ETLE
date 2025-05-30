@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETL Configuration Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .config-section {
+            transition: all 0.3s ease;
+        }
+        .config-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .json-preview {
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+        }
+        .dynamic-field {
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">ETL Configuration Generator</h1>
+            <p class="text-gray-600">Create and validate your ETL configuration with ease</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Configuration Form -->
+            <div class="space-y-6">
+                <form id="configForm" class="space-y-6">
+                    <!-- Extract Section -->
+                    <div class="config-section bg-white p-6 rounded-lg shadow-md">
+                        <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+                            <i class="fas fa-database mr-2"></i>Extract Configuration
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Database Type</label>
+                                <select id="dbType" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    <option value="mysql">MySQL</option>
+                                </select>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Host</label>
+                                    <input type="text" id="host" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" value="localhost">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Port</label>
+                                    <input type="number" id="port" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" value="3306">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Database</label>
+                                    <input type="text" id="database" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Table</label>
+                                    <input type="text" id="table" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Username</label>
+                                    <input type="text" id="username" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Password</label>
+                                    <input type="password" id="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Columns</label>
+                                <div id="columnsContainer" class="space-y-2">
+                                    <!-- Columns will be added here dynamically -->
+                                </div>
+                                <button type="button" id="addColumn" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                                    <i class="fas fa-plus mr-2"></i>Add Column
+                                </button>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Order By</label>
+                                <div id="orderByContainer" class="space-y-2">
+                                    <!-- Order by fields will be added here dynamically -->
+                                </div>
+                                <button type="button" id="addOrderBy" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                                    <i class="fas fa-plus mr-2"></i>Add Order By
+                                </button>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Where Conditions</label>
+                                <div id="whereContainer" class="space-y-2">
+                                    <!-- Where conditions will be added here dynamically -->
+                                </div>
+                                <button type="button" id="addWhere" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                                    <i class="fas fa-plus mr-2"></i>Add Condition
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transform Section -->
+                    <div class="config-section bg-white p-6 rounded-lg shadow-md">
+                        <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+                            <i class="fas fa-exchange-alt mr-2"></i>Transform Configuration
+                        </h2>
+                        
+                        <div id="transformationsContainer" class="space-y-4">
+                            <!-- Transformations will be added here dynamically -->
+                        </div>
+                        <button type="button" id="addTransformation" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                            <i class="fas fa-plus mr-2"></i>Add Transformation
+                        </button>
+                    </div>
+
+                    <!-- Restructure Section -->
+                    <div class="config-section bg-white p-6 rounded-lg shadow-md">
+                        <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+                            <i class="fas fa-project-diagram mr-2"></i>Restructure Configuration
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Output Format</label>
+                                <select id="outputFormat" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    <option value="json">JSON</option>
+                                    <option value="csv">CSV</option>
+                                    <option value="excel">Excel</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Output Path</label>
+                                <input type="text" id="outputPath" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" value="output/bill_events.json">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end space-x-4">
+                        <button type="button" id="previewConfig" class="px-6 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                            <i class="fas fa-eye mr-2"></i>Preview
+                        </button>
+                        <button type="submit" class="px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                            <i class="fas fa-save mr-2"></i>Generate Config
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- JSON Preview -->
+            <div class="config-section bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+                    <i class="fas fa-code mr-2"></i>Configuration Preview
+                </h2>
+                <div id="jsonPreview" class="json-preview bg-gray-50 p-4 rounded-md overflow-auto max-h-[800px]">
+                    {/* JSON preview will be shown here */}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration state
+        let config = {
+            extract: {
+                source: {
+                    type: 'mysql',
+                    host: 'localhost',
+                    port: 3306,
+                    database: '',
+                    user: '',
+                    password: '',
+                    table: ''
+                },
+                columns: [],
+                order_by: [],
+                limit: { count: 1000 }
+            },
+            transform: {
+                transformations: []
+            },
+            restructure: {
+                format: 'json',
+                output_path: 'output/bill_events.json',
+                columns: {},
+                json_structure: {
+                    root: [],
+                    nested: {}
+                }
+            },
+            load: {
+                destination: {
+                    type: 'local',
+                    path: 'output/bill_events.json'
+                }
+            }
+        };
+
+        // Track JSON-extracted columns
+        let jsonExtractedColumns = new Set();
+
+        // Initialize the form
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add event listeners
+            document.getElementById('addColumn').addEventListener('click', addColumnField);
+            document.getElementById('addTransformation').addEventListener('click', addTransformationField);
+            document.getElementById('previewConfig').addEventListener('click', updatePreview);
+            document.getElementById('configForm').addEventListener('submit', handleSubmit);
+            document.getElementById('addOrderBy').addEventListener('click', addOrderByField);
+            document.getElementById('addWhere').addEventListener('click', addWhereField);
+
+            // Initialize with one column
+            addColumnField();
+        });
+
+        function addColumnField() {
+            const container = document.getElementById('columnsContainer');
+            const columnDiv = document.createElement('div');
+            columnDiv.className = 'dynamic-field grid grid-cols-3 gap-4 items-end';
+            
+            columnDiv.innerHTML = `
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" class="column-name mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Type</label>
+                    <select class="column-type mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        <option value="string">String</option>
+                        <option value="date">Date</option>
+                        <option value="numeric">Numeric</option>
+                        <option value="json">JSON</option>
+                    </select>
+                </div>
+                <div class="output-name-container">
+                    <label class="block text-sm font-medium text-gray-700">Output Name</label>
+                    <input type="text" class="output-name mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div class="json-keys-container hidden col-span-3">
+                    <label class="block text-sm font-medium text-gray-700">JSON Keys</label>
+                    <div class="json-keys space-y-2">
+                        <!-- JSON keys will be added here -->
+                    </div>
+                    <button type="button" class="add-json-key mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        <i class="fas fa-plus mr-2"></i>Add JSON Key
+                    </button>
+                </div>
+                <div class="col-span-3 flex justify-end">
+                    <button type="button" class="remove-column px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                        <i class="fas fa-trash mr-2"></i>Remove
+                    </button>
+                </div>
+            `;
+            
+            container.appendChild(columnDiv);
+            
+            // Add event listeners
+            const typeSelect = columnDiv.querySelector('.column-type');
+            typeSelect.addEventListener('change', function() {
+                const jsonKeysContainer = columnDiv.querySelector('.json-keys-container');
+                const outputNameContainer = columnDiv.querySelector('.output-name-container');
+                if (this.value === 'json') {
+                    jsonKeysContainer.classList.remove('hidden');
+                    outputNameContainer.classList.add('hidden');
+                    addJsonKeyField(columnDiv.querySelector('.json-keys'));
+                } else {
+                    jsonKeysContainer.classList.add('hidden');
+                    outputNameContainer.classList.remove('hidden');
+                }
+            });
+            
+            columnDiv.querySelector('.remove-column').addEventListener('click', function() {
+                container.removeChild(columnDiv);
+                updateJsonExtractedColumns();
+            });
+            
+            columnDiv.querySelector('.add-json-key').addEventListener('click', function() {
+                addJsonKeyField(columnDiv.querySelector('.json-keys'));
+            });
+        }
+
+        function addJsonKeyField(container) {
+            const keyDiv = document.createElement('div');
+            keyDiv.className = 'dynamic-field grid grid-cols-2 gap-4 items-end';
+            
+            keyDiv.innerHTML = `
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Path</label>
+                    <input type="text" class="json-key-path mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Output Name</label>
+                    <input type="text" class="json-key-output mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div class="col-span-2 flex justify-end">
+                    <button type="button" class="remove-json-key px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                        <i class="fas fa-trash mr-2"></i>Remove
+                    </button>
+                </div>
+            `;
+            
+            container.appendChild(keyDiv);
+            
+            keyDiv.querySelector('.remove-json-key').addEventListener('click', function() {
+                container.removeChild(keyDiv);
+                updateJsonExtractedColumns();
+            });
+
+            // Add event listener to update JSON extracted columns when output name changes
+            keyDiv.querySelector('.json-key-output').addEventListener('change', updateJsonExtractedColumns);
+        }
+
+        function updateJsonExtractedColumns() {
+            jsonExtractedColumns.clear();
+            document.querySelectorAll('.column-type').forEach((typeSelect, index) => {
+                if (typeSelect.value === 'json') {
+                    const jsonKeys = document.querySelectorAll('.json-keys')[index];
+                    jsonKeys.querySelectorAll('.json-key-output').forEach(outputInput => {
+                        if (outputInput.value) {
+                            jsonExtractedColumns.add(outputInput.value);
+                        }
+                    });
+                }
+            });
+            updateWhereColumnOptions();
+        }
+
+        function updateWhereColumnOptions() {
+            const columns = new Set();
+            
+            // Add regular columns
+            document.querySelectorAll('.column-name').forEach(input => {
+                if (input.value) {
+                    columns.add(input.value);
+                }
+            });
+            
+            // Add output names
+            document.querySelectorAll('.output-name').forEach(input => {
+                if (input.value) {
+                    columns.add(input.value);
+                }
+            });
+            
+            // Update all WHERE column selects
+            document.querySelectorAll('.where-column').forEach(select => {
+                const currentValue = select.value;
+                select.innerHTML = '<option value="">Select Column</option>';
+                
+                columns.forEach(column => {
+                    const option = document.createElement('option');
+                    option.value = column;
+                    option.textContent = column;
+                    
+                    // Disable JSON-extracted columns
+                    if (jsonExtractedColumns.has(column)) {
+                        option.disabled = true;
+                        option.textContent += ' (JSON-extracted - not available for WHERE)';
+                    }
+                    
+                    select.appendChild(option);
+                });
+                
+                // Restore previous value if it's still valid
+                if (currentValue && !jsonExtractedColumns.has(currentValue)) {
+                    select.value = currentValue;
+                }
+            });
+        }
+
+        // Add event listeners for column changes
+        document.addEventListener('change', function(e) {
+            if (e.target.classList.contains('column-name') || 
+                e.target.classList.contains('output-name') || 
+                e.target.classList.contains('column-type')) {
+                updateJsonExtractedColumns();
+            }
+        });
+
+        function addTransformationField() {
+            const container = document.getElementById('transformationsContainer');
+            const transformDiv = document.createElement('div');
+            transformDiv.className = 'dynamic-field p-4 border rounded-md';
+            
+            transformDiv.innerHTML = `
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Type</label>
+                        <select class="transform-type mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            <option value="arithmetic">Arithmetic Operation</option>
+                            <option value="aggregate">Aggregate Operation</option>
+                            <option value="custom_file">Custom File</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Output Column</label>
+                        <input type="text" class="transform-output mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <label class="block text-sm font-medium text-gray-700">Columns</label>
+                    <input type="text" class="transform-columns mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Comma-separated column names">
+                </div>
+                <div class="transform-options mt-4 space-y-4 hidden">
+                    <!-- Arithmetic Operation Options -->
+                    <div class="arithmetic-options hidden">
+                        <label class="block text-sm font-medium text-gray-700">Operation</label>
+                        <select class="arithmetic-operation mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            <option value="add">Add</option>
+                            <option value="multiply">Multiply</option>
+                            <option value="subtract">Subtract</option>
+                            <option value="divide">Divide</option>
+                        </select>
+                        <p class="mt-1 text-sm text-gray-500">Note: Requires exactly 2 columns for operation</p>
+                    </div>
+
+                    <!-- Aggregate Operation Options -->
+                    <div class="aggregate-options hidden">
+                        <label class="block text-sm font-medium text-gray-700">Operation</label>
+                        <select class="aggregate-operation mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            <option value="sum">Sum</option>
+                            <option value="mean">Mean</option>
+                            <option value="count">Count</option>
+                        </select>
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700">Group By Columns</label>
+                            <input type="text" class="group-by-columns mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Comma-separated column names">
+                        </div>
+                    </div>
+
+                    <!-- Custom File Options -->
+                    <div class="custom-file-options hidden">
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700">File Path</label>
+                            <input type="text" class="custom-file-path mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Path to custom Python file">
+                        </div>
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700">Function Name</label>
+                            <input type="text" class="custom-function-name mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Name of the function to call">
+                        </div>
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700">Parameters (JSON)</label>
+                            <textarea class="custom-parameters mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" rows="3" placeholder='{"param1": "value1", "param2": "value2"}'></textarea>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(transformDiv);
+
+            // Add event listeners for the transformation
+            const typeSelect = transformDiv.querySelector('.transform-type');
+            const optionsDiv = transformDiv.querySelector('.transform-options');
+            const arithmeticOptions = transformDiv.querySelector('.arithmetic-options');
+            const aggregateOptions = transformDiv.querySelector('.aggregate-options');
+            const customFileOptions = transformDiv.querySelector('.custom-file-options');
+
+            typeSelect.addEventListener('change', (e) => {
+                optionsDiv.classList.remove('hidden');
+                arithmeticOptions.classList.add('hidden');
+                aggregateOptions.classList.add('hidden');
+                customFileOptions.classList.add('hidden');
+                
+                switch (e.target.value) {
+                    case 'arithmetic':
+                        arithmeticOptions.classList.remove('hidden');
+                        break;
+                    case 'aggregate':
+                        aggregateOptions.classList.remove('hidden');
+                        break;
+                    case 'custom_file':
+                        customFileOptions.classList.remove('hidden');
+                        break;
+                }
+            });
+        }
+
+        function updatePreview() {
+            // Update config object with form values
+            updateConfigFromForm();
+            
+            // Display formatted JSON
+            const preview = document.getElementById('jsonPreview');
+            preview.textContent = JSON.stringify(config, null, 2);
+        }
+
+        function updateConfigFromForm() {
+            // Update extract configuration
+            config.extract.source.host = document.getElementById('host').value;
+            config.extract.source.port = parseInt(document.getElementById('port').value);
+            config.extract.source.database = document.getElementById('database').value;
+            config.extract.source.user = document.getElementById('username').value;
+            config.extract.source.password = document.getElementById('password').value;
+            config.extract.source.table = document.getElementById('table').value;
+
+            // Update columns with JSON fields
+            config.extract.columns = [];
+            document.querySelectorAll('#columnsContainer > div').forEach(div => {
+                const column = {
+                    name: div.querySelector('.column-name').value,
+                    type: div.querySelector('.column-type').value
+                };
+
+                if (column.type === 'json') {
+                    column.keys = Array.from(div.querySelectorAll('.json-keys > div')).map(fieldDiv => {
+                        const path = fieldDiv.querySelector('.json-key-path').value;
+                        const outputName = fieldDiv.querySelector('.json-key-output').value;
+                        if (path.trim() !== '') {
+                            return {
+                                path: path,
+                                output_name: outputName || path.split('.').pop()
+                            };
+                        }
+                        return null;
+                    }).filter(field => field !== null);
+                } else {
+                    column.output_name = div.querySelector('.output-name').value;
+                }
+
+                config.extract.columns.push(column);
+            });
+
+            // Update transformations with specific options
+            config.transform.transformations = [];
+            document.querySelectorAll('#transformationsContainer > div').forEach(div => {
+                const transform = {
+                    type: div.querySelector('.transform-type').value,
+                    columns: div.querySelector('.transform-columns').value.split(',').map(c => c.trim()),
+                    output_column: div.querySelector('.transform-output').value
+                };
+
+                // Add type-specific options
+                switch (transform.type) {
+                    case 'arithmetic':
+                        transform.operation = div.querySelector('.arithmetic-operation').value;
+                        break;
+                    case 'aggregate':
+                        transform.operation = div.querySelector('.aggregate-operation').value;
+                        const groupBy = div.querySelector('.group-by-columns').value;
+                        if (groupBy) {
+                            transform.group_by = groupBy.split(',').map(c => c.trim());
+                        }
+                        break;
+                    case 'custom_file':
+                        transform.file_path = div.querySelector('.custom-file-path').value;
+                        transform.function_name = div.querySelector('.custom-function-name').value;
+                        const paramsText = div.querySelector('.custom-parameters').value;
+                        if (paramsText) {
+                            try {
+                                transform.parameters = JSON.parse(paramsText);
+                            } catch (e) {
+                                console.error('Invalid JSON parameters:', e);
+                            }
+                        }
+                        break;
+                }
+
+                config.transform.transformations.push(transform);
+            });
+
+            // Update restructure configuration
+            config.restructure.format = document.getElementById('outputFormat').value;
+            config.restructure.output_path = document.getElementById('outputPath').value;
+            
+            // Update load configuration to match restructure output
+            config.load.destination.path = config.restructure.output_path;
+
+            // Update order by
+            config.extract.order_by = [];
+            document.querySelectorAll('#orderByContainer > div').forEach(div => {
+                const column = div.querySelector('.order-by-column').value;
+                const direction = div.querySelector('.order-by-direction').value;
+                if (column) {
+                    config.extract.order_by.push({
+                        column: column,
+                        direction: direction
+                    });
+                }
+            });
+
+            // Update where conditions
+            config.extract.where = [];
+            document.querySelectorAll('#whereContainer > div').forEach(div => {
+                const column = div.querySelector('.where-column').value;
+                const operator = div.querySelector('.where-operator').value;
+                const value = div.querySelector('.where-value').value;
+                const value2 = div.querySelector('.where-value2').value;
+                const logical = div.querySelector('.where-logical').value;
+
+                if (column && operator && value) {
+                    const condition = {
+                        column: column,
+                        operator: operator,
+                        value: value
+                    };
+
+                    if (operator === 'BETWEEN' && value2) {
+                        condition.value2 = value2;
+                    }
+
+                    if (operator === 'IN') {
+                        condition.value = value.split(',').map(v => v.trim());
+                    }
+
+                    config.extract.where.push({
+                        condition: condition,
+                        logical: logical
+                    });
+                }
+            });
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            updateConfigFromForm();
+            
+            // Create and download the config file
+            const blob = new Blob([JSON.stringify(config, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'config.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function addOrderByField() {
+            const container = document.getElementById('orderByContainer');
+            const orderByDiv = document.createElement('div');
+            orderByDiv.className = 'dynamic-field grid grid-cols-2 gap-4 items-end';
+            
+            orderByDiv.innerHTML = `
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Column</label>
+                    <input type="text" class="order-by-column mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Direction</label>
+                    <select class="order-by-direction mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        <option value="asc">Ascending</option>
+                        <option value="desc">Descending</option>
+                    </select>
+                </div>
+                <button type="button" class="remove-order-by px-2 py-1 text-red-500 hover:text-red-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            
+            container.appendChild(orderByDiv);
+
+            // Add event listener for remove button
+            orderByDiv.querySelector('.remove-order-by').addEventListener('click', () => {
+                orderByDiv.remove();
+            });
+        }
+
+        function addWhereField() {
+            const container = document.getElementById('whereContainer');
+            const whereDiv = document.createElement('div');
+            whereDiv.className = 'dynamic-field grid grid-cols-4 gap-4 items-end';
+            
+            whereDiv.innerHTML = `
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Column</label>
+                    <select class="where-column mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        <option value="">Select Column</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Operator</label>
+                    <select class="where-operator mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        <option value="=">=</option>
+                        <option value="!=">!=</option>
+                        <option value=">">></option>
+                        <option value=">=">>=</option>
+                        <option value="<"><</option>
+                        <option value="<="><=</option>
+                        <option value="LIKE">LIKE</option>
+                        <option value="IN">IN</option>
+                        <option value="BETWEEN">BETWEEN</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Value</label>
+                    <input type="text" class="where-value mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Value 2 (for BETWEEN)</label>
+                    <input type="text" class="where-value2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" disabled>
+                </div>
+                <div class="col-span-4">
+                    <label class="block text-sm font-medium text-gray-700">Logical Operator</label>
+                    <select class="where-logical mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        <option value="AND">AND</option>
+                        <option value="OR">OR</option>
+                    </select>
+                </div>
+                <div class="flex justify-end">
+                    <button type="button" class="remove-where px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                        <i class="fas fa-trash mr-2"></i>Remove
+                    </button>
+                </div>
+            `;
+            
+            container.appendChild(whereDiv);
+            
+            whereDiv.querySelector('.remove-where').addEventListener('click', function() {
+                container.removeChild(whereDiv);
+            });
+
+            updateWhereColumnOptions();
+        }
+    </script>
+</body>
+</html>

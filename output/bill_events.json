@@ -1,0 +1,1517 @@
+[
+  {
+    "id": "E2987",
+    "sku": "SKU2335",
+    "account": "AC59672",
+    "type": "support",
+    "notes": "Series painting interesting never oil leader ready inside.",
+    "amount_inr": 259.77,
+    "amount_usd": 3.11724,
+    "currency": "INR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-30T22:43:22",
+      "end": "2025-05-31T01:43:22"
+    }
+  },
+  {
+    "id": "E7718",
+    "sku": "SKU1964",
+    "account": "AC29529",
+    "type": "support",
+    "notes": "None seat care.",
+    "amount_inr": 477.32,
+    "amount_usd": 5.72784,
+    "currency": "EUR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-30T19:10:48",
+      "end": "2025-05-30T22:10:48"
+    }
+  },
+  {
+    "id": "E7856",
+    "sku": "SKU6693",
+    "account": "AC50351",
+    "type": "billing",
+    "notes": "Staff open protect phone second true series management.",
+    "amount_inr": 480.93,
+    "amount_usd": 5.77116,
+    "currency": "EUR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-30T16:29:22",
+      "end": "2025-05-30T19:29:22"
+    }
+  },
+  {
+    "id": "E3218",
+    "sku": "SKU6301",
+    "account": "AC38131",
+    "type": "support",
+    "notes": "Capital form spend half catch a leg.",
+    "amount_inr": 354.73,
+    "amount_usd": 4.25676,
+    "currency": "USD",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-30T14:01:15",
+      "end": "2025-05-30T19:01:15"
+    }
+  },
+  {
+    "id": "E4436",
+    "sku": "SKU5092",
+    "account": "AC55146",
+    "type": "billing",
+    "notes": "Heart lawyer seven bank enough.",
+    "amount_inr": 109.07,
+    "amount_usd": 1.30884,
+    "currency": "EUR",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-30T01:01:23",
+      "end": "2025-05-30T02:01:23"
+    }
+  },
+  {
+    "id": "E6833",
+    "sku": "SKU5883",
+    "account": "AC96302",
+    "type": "billing",
+    "notes": "High majority bill listen possible identify dark.",
+    "amount_inr": 216.81,
+    "amount_usd": 2.6017200000000003,
+    "currency": "USD",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-29T06:23:56",
+      "end": "2025-05-29T10:23:56"
+    }
+  },
+  {
+    "id": "E6805",
+    "sku": "SKU9492",
+    "account": "AC32567",
+    "type": "billing",
+    "notes": "True relate whose laugh.",
+    "amount_inr": 143.2,
+    "amount_usd": 1.7184,
+    "currency": "USD",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-28T18:56:52",
+      "end": "2025-05-28T21:56:52"
+    }
+  },
+  {
+    "id": "E4134",
+    "sku": "SKU9395",
+    "account": "AC73178",
+    "type": "billing",
+    "notes": "Too sense dark of.",
+    "amount_inr": 281.89,
+    "amount_usd": 3.3826799999999997,
+    "currency": "INR",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-28T16:50:16",
+      "end": "2025-05-28T18:50:16"
+    }
+  },
+  {
+    "id": "E3729",
+    "sku": "SKU8650",
+    "account": "AC64452",
+    "type": "billing",
+    "notes": "Gas because hospital whatever decade camera.",
+    "amount_inr": 428.48,
+    "amount_usd": 5.1417600000000006,
+    "currency": "EUR",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-28T14:47:35",
+      "end": "2025-05-28T16:47:35"
+    }
+  },
+  {
+    "id": "E8631",
+    "sku": "SKU6803",
+    "account": "AC12665",
+    "type": "billing",
+    "notes": "Source force single best should suddenly word whole.",
+    "amount_inr": 499.65,
+    "amount_usd": 5.9958,
+    "currency": "EUR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-28T14:22:12",
+      "end": "2025-05-28T19:22:12"
+    }
+  },
+  {
+    "id": "E4116",
+    "sku": "SKU8592",
+    "account": "AC21751",
+    "type": "support",
+    "notes": "Chance society step child protect certainly however.",
+    "amount_inr": 105.04,
+    "amount_usd": 1.26048,
+    "currency": "EUR",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-28T13:13:24",
+      "end": "2025-05-28T14:13:24"
+    }
+  },
+  {
+    "id": "E5892",
+    "sku": "SKU9155",
+    "account": "AC93936",
+    "type": "usage",
+    "notes": "Street last court.",
+    "amount_inr": 478.69,
+    "amount_usd": 5.74428,
+    "currency": "EUR",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-28T11:35:20",
+      "end": "2025-05-28T15:35:20"
+    }
+  },
+  {
+    "id": "E4324",
+    "sku": "SKU1612",
+    "account": "AC16177",
+    "type": "usage",
+    "notes": "Side factor avoid special imagine stage paper.",
+    "amount_inr": 336.2,
+    "amount_usd": 4.0344,
+    "currency": "EUR",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-28T05:34:55",
+      "end": "2025-05-28T09:34:55"
+    }
+  },
+  {
+    "id": "E9797",
+    "sku": "SKU6139",
+    "account": "AC87837",
+    "type": "billing",
+    "notes": "Box north course.",
+    "amount_inr": 332.55,
+    "amount_usd": 3.9906,
+    "currency": "EUR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-27T14:23:18",
+      "end": "2025-05-27T19:23:18"
+    }
+  },
+  {
+    "id": "E9749",
+    "sku": "SKU3001",
+    "account": "AC59851",
+    "type": "support",
+    "notes": "Win himself reach unit message.",
+    "amount_inr": 171.94,
+    "amount_usd": 2.0632800000000002,
+    "currency": "USD",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-27T01:45:10",
+      "end": "2025-05-27T05:45:10"
+    }
+  },
+  {
+    "id": "E3471",
+    "sku": "SKU9062",
+    "account": "AC99815",
+    "type": "usage",
+    "notes": "Any teacher why middle work.",
+    "amount_inr": 433.7,
+    "amount_usd": 5.2044,
+    "currency": "INR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-26T23:34:47",
+      "end": "2025-05-27T02:34:47"
+    }
+  },
+  {
+    "id": "E3418",
+    "sku": "SKU3453",
+    "account": "AC34921",
+    "type": "billing",
+    "notes": "Voice somebody rich yard by finally.",
+    "amount_inr": 266.37,
+    "amount_usd": 3.19644,
+    "currency": "EUR",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-26T09:28:35",
+      "end": "2025-05-26T11:28:35"
+    }
+  },
+  {
+    "id": "E6124",
+    "sku": "SKU9389",
+    "account": "AC70386",
+    "type": "support",
+    "notes": "Fight discover nature.",
+    "amount_inr": 364.79,
+    "amount_usd": 4.37748,
+    "currency": "USD",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-25T20:10:35",
+      "end": "2025-05-26T01:10:35"
+    }
+  },
+  {
+    "id": "E3337",
+    "sku": "SKU4387",
+    "account": "AC81949",
+    "type": "billing",
+    "notes": "Number material hot operation such before few hit.",
+    "amount_inr": 269.86,
+    "amount_usd": 3.2383200000000003,
+    "currency": "EUR",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-25T06:08:25",
+      "end": "2025-05-25T08:08:25"
+    }
+  },
+  {
+    "id": "E4921",
+    "sku": "SKU9578",
+    "account": "AC36622",
+    "type": "support",
+    "notes": "Realize can issue already ready.",
+    "amount_inr": 281.75,
+    "amount_usd": 3.3810000000000002,
+    "currency": "EUR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-24T22:36:12",
+      "end": "2025-05-25T01:36:12"
+    }
+  },
+  {
+    "id": "E5345",
+    "sku": "SKU7441",
+    "account": "AC10095",
+    "type": "support",
+    "notes": "Amount interesting north address station thought.",
+    "amount_inr": 218.29,
+    "amount_usd": 2.61948,
+    "currency": "USD",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-24T22:04:11",
+      "end": "2025-05-24T23:04:11"
+    }
+  },
+  {
+    "id": "E6871",
+    "sku": "SKU3361",
+    "account": "AC48905",
+    "type": "support",
+    "notes": "Room now professional or let community dog impact.",
+    "amount_inr": 257.92,
+    "amount_usd": 3.0950400000000005,
+    "currency": "USD",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-24T17:14:55",
+      "end": "2025-05-24T20:14:55"
+    }
+  },
+  {
+    "id": "E6305",
+    "sku": "SKU6865",
+    "account": "AC37901",
+    "type": "billing",
+    "notes": "International serious news off special serious.",
+    "amount_inr": 348.06,
+    "amount_usd": 4.17672,
+    "currency": "USD",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-24T11:34:59",
+      "end": "2025-05-24T14:34:59"
+    }
+  },
+  {
+    "id": "E1086",
+    "sku": "SKU3524",
+    "account": "AC78221",
+    "type": "billing",
+    "notes": "Science go politics both treatment product student.",
+    "amount_inr": 413.22,
+    "amount_usd": 4.958640000000001,
+    "currency": "EUR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-23T14:50:23",
+      "end": "2025-05-23T17:50:23"
+    }
+  },
+  {
+    "id": "E1895",
+    "sku": "SKU8834",
+    "account": "AC66984",
+    "type": "support",
+    "notes": "Suffer say need minute natural dog bill.",
+    "amount_inr": 310.64,
+    "amount_usd": 3.72768,
+    "currency": "EUR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-23T11:46:00",
+      "end": "2025-05-23T16:46:00"
+    }
+  },
+  {
+    "id": "E5694",
+    "sku": "SKU2960",
+    "account": "AC20653",
+    "type": "support",
+    "notes": "Company meeting each inside crime they.",
+    "amount_inr": 312.23,
+    "amount_usd": 3.74676,
+    "currency": "INR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-23T03:09:21",
+      "end": "2025-05-23T08:09:21"
+    }
+  },
+  {
+    "id": "E5789",
+    "sku": "SKU7014",
+    "account": "AC82385",
+    "type": "billing",
+    "notes": "Suddenly per wonder company.",
+    "amount_inr": 479.03,
+    "amount_usd": 5.74836,
+    "currency": "EUR",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-22T00:23:08",
+      "end": "2025-05-22T01:23:08"
+    }
+  },
+  {
+    "id": "E1708",
+    "sku": "SKU2857",
+    "account": "AC15528",
+    "type": "usage",
+    "notes": "Draw during special much threat research south.",
+    "amount_inr": 116.59,
+    "amount_usd": 1.39908,
+    "currency": "INR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-21T20:50:20",
+      "end": "2025-05-21T23:50:20"
+    }
+  },
+  {
+    "id": "E5212",
+    "sku": "SKU6518",
+    "account": "AC15402",
+    "type": "support",
+    "notes": "Common tax leader number them matter else.",
+    "amount_inr": 436.53,
+    "amount_usd": 5.23836,
+    "currency": "USD",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-21T15:23:24",
+      "end": "2025-05-21T20:23:24"
+    }
+  },
+  {
+    "id": "E6231",
+    "sku": "SKU9560",
+    "account": "AC79463",
+    "type": "usage",
+    "notes": "Resource official citizen set chance.",
+    "amount_inr": 382.44,
+    "amount_usd": 4.5892800000000005,
+    "currency": "USD",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-21T14:54:58",
+      "end": "2025-05-21T15:54:58"
+    }
+  },
+  {
+    "id": "E7447",
+    "sku": "SKU8704",
+    "account": "AC48296",
+    "type": "support",
+    "notes": "Pay hope consumer why rock.",
+    "amount_inr": 30.78,
+    "amount_usd": 0.36936,
+    "currency": "USD",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-21T09:40:27",
+      "end": "2025-05-21T10:40:27"
+    }
+  },
+  {
+    "id": "E9272",
+    "sku": "SKU6901",
+    "account": "AC59808",
+    "type": "usage",
+    "notes": "Participant success include miss weight.",
+    "amount_inr": 24.7,
+    "amount_usd": 0.2964,
+    "currency": "INR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-21T05:16:15",
+      "end": "2025-05-21T08:16:15"
+    }
+  },
+  {
+    "id": "E3292",
+    "sku": "SKU6949",
+    "account": "AC18682",
+    "type": "support",
+    "notes": "Home also road.",
+    "amount_inr": 337.17,
+    "amount_usd": 4.0460400000000005,
+    "currency": "USD",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-20T21:13:41",
+      "end": "2025-05-21T01:13:41"
+    }
+  },
+  {
+    "id": "E2458",
+    "sku": "SKU5340",
+    "account": "AC62281",
+    "type": "billing",
+    "notes": "Well sort country draw remember police wrong ability.",
+    "amount_inr": 274.04,
+    "amount_usd": 3.2884800000000003,
+    "currency": "EUR",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-20T16:38:19",
+      "end": "2025-05-20T18:38:19"
+    }
+  },
+  {
+    "id": "E1893",
+    "sku": "SKU4473",
+    "account": "AC53946",
+    "type": "support",
+    "notes": "Never possible customer discover somebody do yard.",
+    "amount_inr": 317.41,
+    "amount_usd": 3.8089200000000005,
+    "currency": "INR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-20T14:41:03",
+      "end": "2025-05-20T17:41:03"
+    }
+  },
+  {
+    "id": "E6543",
+    "sku": "SKU7653",
+    "account": "AC46198",
+    "type": "support",
+    "notes": "Make technology poor.",
+    "amount_inr": 396.59,
+    "amount_usd": 4.75908,
+    "currency": "USD",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-20T09:52:38",
+      "end": "2025-05-20T11:52:38"
+    }
+  },
+  {
+    "id": "E5195",
+    "sku": "SKU2293",
+    "account": "AC91335",
+    "type": "usage",
+    "notes": "Return strong professional run.",
+    "amount_inr": 26.9,
+    "amount_usd": 0.3228,
+    "currency": "INR",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-20T08:41:07",
+      "end": "2025-05-20T10:41:07"
+    }
+  },
+  {
+    "id": "E4997",
+    "sku": "SKU5524",
+    "account": "AC34027",
+    "type": "billing",
+    "notes": "Church agreement pay partner far concern himself.",
+    "amount_inr": 302.88,
+    "amount_usd": 3.63456,
+    "currency": "INR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-20T08:14:28",
+      "end": "2025-05-20T13:14:28"
+    }
+  },
+  {
+    "id": "E9543",
+    "sku": "SKU2129",
+    "account": "AC97579",
+    "type": "billing",
+    "notes": "Now find Mrs score.",
+    "amount_inr": 372.43,
+    "amount_usd": 4.4691600000000005,
+    "currency": "INR",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-20T06:53:17",
+      "end": "2025-05-20T07:53:17"
+    }
+  },
+  {
+    "id": "E2388",
+    "sku": "SKU9846",
+    "account": "AC47351",
+    "type": "support",
+    "notes": "Somebody attention order you must example.",
+    "amount_inr": 438.54,
+    "amount_usd": 5.26248,
+    "currency": "INR",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-20T04:34:04",
+      "end": "2025-05-20T06:34:04"
+    }
+  },
+  {
+    "id": "E7790",
+    "sku": "SKU4895",
+    "account": "AC75152",
+    "type": "support",
+    "notes": "Real why remember design soldier husband phone store.",
+    "amount_inr": 246.09,
+    "amount_usd": 2.95308,
+    "currency": "INR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-19T21:57:10",
+      "end": "2025-05-20T02:57:10"
+    }
+  },
+  {
+    "id": "E4247",
+    "sku": "SKU7867",
+    "account": "AC95744",
+    "type": "support",
+    "notes": "Morning see century tend.",
+    "amount_inr": 485.96,
+    "amount_usd": 5.83152,
+    "currency": "USD",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-19T20:15:27",
+      "end": "2025-05-20T01:15:27"
+    }
+  },
+  {
+    "id": "E2188",
+    "sku": "SKU5346",
+    "account": "AC35833",
+    "type": "usage",
+    "notes": "Example yourself ok and later wind.",
+    "amount_inr": 154.84,
+    "amount_usd": 1.8580800000000002,
+    "currency": "USD",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-19T17:01:36",
+      "end": "2025-05-19T22:01:36"
+    }
+  },
+  {
+    "id": "E6094",
+    "sku": "SKU2084",
+    "account": "AC72214",
+    "type": "usage",
+    "notes": "Deep see seat beat red.",
+    "amount_inr": 120.6,
+    "amount_usd": 1.4472,
+    "currency": "EUR",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-19T14:07:58",
+      "end": "2025-05-19T18:07:58"
+    }
+  },
+  {
+    "id": "E3182",
+    "sku": "SKU7054",
+    "account": "AC15148",
+    "type": "billing",
+    "notes": "Site always sign reality other name say.",
+    "amount_inr": 66.4,
+    "amount_usd": 0.7968000000000001,
+    "currency": "INR",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-19T05:21:50",
+      "end": "2025-05-19T09:21:50"
+    }
+  },
+  {
+    "id": "E3438",
+    "sku": "SKU8838",
+    "account": "AC58178",
+    "type": "usage",
+    "notes": "But modern anyone full indicate hundred.",
+    "amount_inr": 198.62,
+    "amount_usd": 2.3834400000000002,
+    "currency": "EUR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-18T13:36:03",
+      "end": "2025-05-18T16:36:03"
+    }
+  },
+  {
+    "id": "E3970",
+    "sku": "SKU7932",
+    "account": "AC90228",
+    "type": "support",
+    "notes": "Per mission enjoy various happen in.",
+    "amount_inr": 176.24,
+    "amount_usd": 2.1148800000000003,
+    "currency": "INR",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-18T13:26:54",
+      "end": "2025-05-18T17:26:54"
+    }
+  },
+  {
+    "id": "E1572",
+    "sku": "SKU3852",
+    "account": "AC23083",
+    "type": "usage",
+    "notes": "Order play others story follow.",
+    "amount_inr": 359.08,
+    "amount_usd": 4.30896,
+    "currency": "USD",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-18T10:25:59",
+      "end": "2025-05-18T14:25:59"
+    }
+  },
+  {
+    "id": "E1915",
+    "sku": "SKU8141",
+    "account": "AC68949",
+    "type": "usage",
+    "notes": "Buy hot parent rule.",
+    "amount_inr": 295.43,
+    "amount_usd": 3.54516,
+    "currency": "EUR",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-18T08:35:41",
+      "end": "2025-05-18T10:35:41"
+    }
+  },
+  {
+    "id": "E9350",
+    "sku": "SKU2346",
+    "account": "AC52566",
+    "type": "billing",
+    "notes": "Never style value right fast.",
+    "amount_inr": 441.55,
+    "amount_usd": 5.2986,
+    "currency": "INR",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-17T18:42:58",
+      "end": "2025-05-17T19:42:58"
+    }
+  },
+  {
+    "id": "E1420",
+    "sku": "SKU3509",
+    "account": "AC93752",
+    "type": "billing",
+    "notes": "Guess treat development nor movie ball light.",
+    "amount_inr": 486.89,
+    "amount_usd": 5.84268,
+    "currency": "INR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-17T15:49:20",
+      "end": "2025-05-17T18:49:20"
+    }
+  },
+  {
+    "id": "E2270",
+    "sku": "SKU6577",
+    "account": "AC17304",
+    "type": "billing",
+    "notes": "Class toward return list election itself air.",
+    "amount_inr": 32.13,
+    "amount_usd": 0.38556,
+    "currency": "USD",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-17T13:15:36",
+      "end": "2025-05-17T16:15:36"
+    }
+  },
+  {
+    "id": "E7881",
+    "sku": "SKU1758",
+    "account": "AC45655",
+    "type": "usage",
+    "notes": "Majority have size citizen.",
+    "amount_inr": 226.05,
+    "amount_usd": 2.7126,
+    "currency": "INR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-17T09:30:50",
+      "end": "2025-05-17T14:30:50"
+    }
+  },
+  {
+    "id": "E1904",
+    "sku": "SKU5421",
+    "account": "AC97251",
+    "type": "support",
+    "notes": "Citizen police probably treat American a.",
+    "amount_inr": 65.23,
+    "amount_usd": 0.78276,
+    "currency": "INR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-17T06:21:35",
+      "end": "2025-05-17T09:21:35"
+    }
+  },
+  {
+    "id": "E4225",
+    "sku": "SKU2303",
+    "account": "AC24049",
+    "type": "support",
+    "notes": "Indicate writer lead ahead treatment.",
+    "amount_inr": 263.05,
+    "amount_usd": 3.1566,
+    "currency": "INR",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-16T18:22:08",
+      "end": "2025-05-16T22:22:08"
+    }
+  },
+  {
+    "id": "E6048",
+    "sku": "SKU1514",
+    "account": "AC22255",
+    "type": "support",
+    "notes": "Drop offer pull available at.",
+    "amount_inr": 205.43,
+    "amount_usd": 2.46516,
+    "currency": "EUR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-16T09:32:28",
+      "end": "2025-05-16T12:32:28"
+    }
+  },
+  {
+    "id": "E4359",
+    "sku": "SKU2455",
+    "account": "AC45655",
+    "type": "usage",
+    "notes": "Main environment history it become coach respond speak.",
+    "amount_inr": 323.91,
+    "amount_usd": 3.8869200000000004,
+    "currency": "USD",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-15T15:18:30",
+      "end": "2025-05-15T17:18:30"
+    }
+  },
+  {
+    "id": "E8574",
+    "sku": "SKU2144",
+    "account": "AC40409",
+    "type": "billing",
+    "notes": "Also hair edge recent improve almost include.",
+    "amount_inr": 201.52,
+    "amount_usd": 2.4182400000000004,
+    "currency": "INR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-15T13:32:25",
+      "end": "2025-05-15T16:32:25"
+    }
+  },
+  {
+    "id": "E1585",
+    "sku": "SKU3269",
+    "account": "AC67078",
+    "type": "usage",
+    "notes": "Tell range interview around group discover analysis.",
+    "amount_inr": 386.57,
+    "amount_usd": 4.63884,
+    "currency": "USD",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-15T10:54:38",
+      "end": "2025-05-15T15:54:38"
+    }
+  },
+  {
+    "id": "E7075",
+    "sku": "SKU6857",
+    "account": "AC48308",
+    "type": "billing",
+    "notes": "Town police and factor continue medical address large.",
+    "amount_inr": 400.95,
+    "amount_usd": 4.8114,
+    "currency": "INR",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-15T06:39:46",
+      "end": "2025-05-15T07:39:46"
+    }
+  },
+  {
+    "id": "E7366",
+    "sku": "SKU5692",
+    "account": "AC31087",
+    "type": "support",
+    "notes": "Inside speak white forward relationship hold statement.",
+    "amount_inr": 307.3,
+    "amount_usd": 3.6876,
+    "currency": "EUR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-15T02:26:31",
+      "end": "2025-05-15T07:26:31"
+    }
+  },
+  {
+    "id": "E4425",
+    "sku": "SKU9618",
+    "account": "AC37332",
+    "type": "billing",
+    "notes": "Peace drop impact course.",
+    "amount_inr": 284.12,
+    "amount_usd": 3.40944,
+    "currency": "USD",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-14T12:12:58",
+      "end": "2025-05-14T13:12:58"
+    }
+  },
+  {
+    "id": "E1088",
+    "sku": "SKU6461",
+    "account": "AC94931",
+    "type": "support",
+    "notes": "Star statement local prove material decide be.",
+    "amount_inr": 298.02,
+    "amount_usd": 3.57624,
+    "currency": "USD",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-14T06:22:03",
+      "end": "2025-05-14T11:22:03"
+    }
+  },
+  {
+    "id": "E8383",
+    "sku": "SKU9954",
+    "account": "AC35998",
+    "type": "billing",
+    "notes": "Stage production magazine character however.",
+    "amount_inr": 287.59,
+    "amount_usd": 3.4510799999999997,
+    "currency": "INR",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-13T10:12:27",
+      "end": "2025-05-13T14:12:27"
+    }
+  },
+  {
+    "id": "E6122",
+    "sku": "SKU6942",
+    "account": "AC94275",
+    "type": "support",
+    "notes": "Community focus reveal remain weight few use.",
+    "amount_inr": 307.63,
+    "amount_usd": 3.69156,
+    "currency": "EUR",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-13T04:23:35",
+      "end": "2025-05-13T05:23:35"
+    }
+  },
+  {
+    "id": "E9105",
+    "sku": "SKU2436",
+    "account": "AC76903",
+    "type": "billing",
+    "notes": "Subject poor your.",
+    "amount_inr": 309.42,
+    "amount_usd": 3.7130400000000003,
+    "currency": "USD",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-13T03:21:26",
+      "end": "2025-05-13T07:21:26"
+    }
+  },
+  {
+    "id": "E1379",
+    "sku": "SKU2565",
+    "account": "AC71498",
+    "type": "billing",
+    "notes": "Hold at human available treat win happy pick.",
+    "amount_inr": 122.49,
+    "amount_usd": 1.46988,
+    "currency": "USD",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-12T09:16:02",
+      "end": "2025-05-12T11:16:02"
+    }
+  },
+  {
+    "id": "E2839",
+    "sku": "SKU1021",
+    "account": "AC15402",
+    "type": "usage",
+    "notes": "Hotel world green.",
+    "amount_inr": 96.55,
+    "amount_usd": 1.1586,
+    "currency": "USD",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-12T06:28:25",
+      "end": "2025-05-12T08:28:25"
+    }
+  },
+  {
+    "id": "E1632",
+    "sku": "SKU5979",
+    "account": "AC31858",
+    "type": "support",
+    "notes": "Likely keep place perform compare last.",
+    "amount_inr": 25.19,
+    "amount_usd": 0.30228000000000005,
+    "currency": "EUR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-12T04:00:13",
+      "end": "2025-05-12T09:00:13"
+    }
+  },
+  {
+    "id": "E4291",
+    "sku": "SKU1979",
+    "account": "AC54838",
+    "type": "billing",
+    "notes": "Specific throw market administration type add.",
+    "amount_inr": 285.45,
+    "amount_usd": 3.4254,
+    "currency": "USD",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-12T03:57:34",
+      "end": "2025-05-12T06:57:34"
+    }
+  },
+  {
+    "id": "E9660",
+    "sku": "SKU7225",
+    "account": "AC87073",
+    "type": "support",
+    "notes": "Close only authority mouth if moment power.",
+    "amount_inr": 183.6,
+    "amount_usd": 2.2032,
+    "currency": "USD",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-11T23:25:58",
+      "end": "2025-05-12T04:25:58"
+    }
+  },
+  {
+    "id": "E2108",
+    "sku": "SKU8526",
+    "account": "AC91833",
+    "type": "support",
+    "notes": "Our response hard idea cultural fast.",
+    "amount_inr": 232.34,
+    "amount_usd": 2.78808,
+    "currency": "USD",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-11T18:02:10",
+      "end": "2025-05-11T19:02:10"
+    }
+  },
+  {
+    "id": "E2420",
+    "sku": "SKU2723",
+    "account": "AC23982",
+    "type": "usage",
+    "notes": "Soon financial off suggest least member.",
+    "amount_inr": 86.06,
+    "amount_usd": 1.03272,
+    "currency": "EUR",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-11T11:31:29",
+      "end": "2025-05-11T12:31:29"
+    }
+  },
+  {
+    "id": "E5225",
+    "sku": "SKU4517",
+    "account": "AC57259",
+    "type": "support",
+    "notes": "Mention city ever source effort.",
+    "amount_inr": 184.74,
+    "amount_usd": 2.21688,
+    "currency": "USD",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-10T11:52:30",
+      "end": "2025-05-10T12:52:30"
+    }
+  },
+  {
+    "id": "E2114",
+    "sku": "SKU3664",
+    "account": "AC52515",
+    "type": "support",
+    "notes": "Professional indicate social send behavior.",
+    "amount_inr": 104.41,
+    "amount_usd": 1.25292,
+    "currency": "USD",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-10T11:37:22",
+      "end": "2025-05-10T16:37:22"
+    }
+  },
+  {
+    "id": "E9203",
+    "sku": "SKU2860",
+    "account": "AC65207",
+    "type": "support",
+    "notes": "All project yard stock yourself apply.",
+    "amount_inr": 397.04,
+    "amount_usd": 4.764480000000001,
+    "currency": "EUR",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-09T23:20:03",
+      "end": "2025-05-10T00:20:03"
+    }
+  },
+  {
+    "id": "E5872",
+    "sku": "SKU2973",
+    "account": "AC78891",
+    "type": "billing",
+    "notes": "Would ok fund big.",
+    "amount_inr": 73.78,
+    "amount_usd": 0.88536,
+    "currency": "USD",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-09T17:50:52",
+      "end": "2025-05-09T21:50:52"
+    }
+  },
+  {
+    "id": "E7832",
+    "sku": "SKU8193",
+    "account": "AC38772",
+    "type": "usage",
+    "notes": "Others attack back without knowledge cup.",
+    "amount_inr": 402.15,
+    "amount_usd": 4.8258,
+    "currency": "INR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-09T10:11:20",
+      "end": "2025-05-09T13:11:20"
+    }
+  },
+  {
+    "id": "E2145",
+    "sku": "SKU4126",
+    "account": "AC46622",
+    "type": "support",
+    "notes": "Song huge fly police.",
+    "amount_inr": 67.5,
+    "amount_usd": 0.81,
+    "currency": "INR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-08T21:37:22",
+      "end": "2025-05-09T02:37:22"
+    }
+  },
+  {
+    "id": "E8000",
+    "sku": "SKU9211",
+    "account": "AC34124",
+    "type": "usage",
+    "notes": "Education Republican look eye camera.",
+    "amount_inr": 106.94,
+    "amount_usd": 1.28328,
+    "currency": "USD",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-08T11:01:30",
+      "end": "2025-05-08T12:01:30"
+    }
+  },
+  {
+    "id": "E6378",
+    "sku": "SKU5108",
+    "account": "AC84974",
+    "type": "support",
+    "notes": "Way whether party.",
+    "amount_inr": 340.71,
+    "amount_usd": 4.08852,
+    "currency": "EUR",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-07T17:36:38",
+      "end": "2025-05-07T21:36:38"
+    }
+  },
+  {
+    "id": "E1582",
+    "sku": "SKU4181",
+    "account": "AC37893",
+    "type": "billing",
+    "notes": "Style commercial letter arm information ability.",
+    "amount_inr": 30.13,
+    "amount_usd": 0.36156,
+    "currency": "INR",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-07T05:08:28",
+      "end": "2025-05-07T07:08:28"
+    }
+  },
+  {
+    "id": "E2421",
+    "sku": "SKU4439",
+    "account": "AC96502",
+    "type": "usage",
+    "notes": "Anything nor majority difficult probably natural.",
+    "amount_inr": 88.03,
+    "amount_usd": 1.05636,
+    "currency": "INR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-07T02:03:09",
+      "end": "2025-05-07T07:03:09"
+    }
+  },
+  {
+    "id": "E8480",
+    "sku": "SKU2973",
+    "account": "AC10964",
+    "type": "support",
+    "notes": "Main medical assume investment TV.",
+    "amount_inr": 290.75,
+    "amount_usd": 3.489,
+    "currency": "INR",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-06T15:06:21",
+      "end": "2025-05-06T19:06:21"
+    }
+  },
+  {
+    "id": "E8059",
+    "sku": "SKU3740",
+    "account": "AC73608",
+    "type": "usage",
+    "notes": "Response firm sit law fall few.",
+    "amount_inr": 375.1,
+    "amount_usd": 4.501200000000001,
+    "currency": "INR",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-06T07:51:10",
+      "end": "2025-05-06T11:51:10"
+    }
+  },
+  {
+    "id": "E4314",
+    "sku": "SKU2300",
+    "account": "AC76167",
+    "type": "usage",
+    "notes": "Great recognize court than present political dog.",
+    "amount_inr": 238.66,
+    "amount_usd": 2.86392,
+    "currency": "USD",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-05T20:47:12",
+      "end": "2025-05-06T01:47:12"
+    }
+  },
+  {
+    "id": "E7868",
+    "sku": "SKU6815",
+    "account": "AC31270",
+    "type": "usage",
+    "notes": "Usually perform choice move computer item.",
+    "amount_inr": 53.91,
+    "amount_usd": 0.6469199999999999,
+    "currency": "EUR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-05T08:36:12",
+      "end": "2025-05-05T11:36:12"
+    }
+  },
+  {
+    "id": "E4405",
+    "sku": "SKU9679",
+    "account": "AC57464",
+    "type": "support",
+    "notes": "Option hand coach others.",
+    "amount_inr": 105.93,
+    "amount_usd": 1.27116,
+    "currency": "EUR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-05T08:11:53",
+      "end": "2025-05-05T13:11:53"
+    }
+  },
+  {
+    "id": "E8656",
+    "sku": "SKU3099",
+    "account": "AC71134",
+    "type": "support",
+    "notes": "Better civil within bar land car no.",
+    "amount_inr": 353.98,
+    "amount_usd": 4.24776,
+    "currency": "USD",
+    "duration": 4.0,
+    "time_period": {
+      "start": "2025-05-05T02:22:19",
+      "end": "2025-05-05T06:22:19"
+    }
+  },
+  {
+    "id": "E3008",
+    "sku": "SKU2424",
+    "account": "AC69483",
+    "type": "billing",
+    "notes": "Company leave test level individual fast apply.",
+    "amount_inr": 384.46,
+    "amount_usd": 4.61352,
+    "currency": "USD",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-04T17:03:06",
+      "end": "2025-05-04T18:03:06"
+    }
+  },
+  {
+    "id": "E5655",
+    "sku": "SKU6685",
+    "account": "AC42760",
+    "type": "billing",
+    "notes": "Little series whether add would.",
+    "amount_inr": 202.11,
+    "amount_usd": 2.42532,
+    "currency": "EUR",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-04T13:19:50",
+      "end": "2025-05-04T15:19:50"
+    }
+  },
+  {
+    "id": "E6204",
+    "sku": "SKU1602",
+    "account": "AC33050",
+    "type": "billing",
+    "notes": "Truth ok eight minute hear claim trade.",
+    "amount_inr": 443.11,
+    "amount_usd": 5.3173200000000005,
+    "currency": "INR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-04T06:08:46",
+      "end": "2025-05-04T11:08:46"
+    }
+  },
+  {
+    "id": "E8256",
+    "sku": "SKU2079",
+    "account": "AC48836",
+    "type": "usage",
+    "notes": "Learn edge foreign eat across threat former.",
+    "amount_inr": 283.02,
+    "amount_usd": 3.3962399999999997,
+    "currency": "USD",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-03T06:30:06",
+      "end": "2025-05-03T09:30:06"
+    }
+  },
+  {
+    "id": "E9034",
+    "sku": "SKU6227",
+    "account": "AC80418",
+    "type": "support",
+    "notes": "Agree scientist treat key event thousand.",
+    "amount_inr": 266.34,
+    "amount_usd": 3.19608,
+    "currency": "USD",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-03T00:00:57",
+      "end": "2025-05-03T03:00:57"
+    }
+  },
+  {
+    "id": "E5099",
+    "sku": "SKU9575",
+    "account": "AC27199",
+    "type": "support",
+    "notes": "Affect spring great draw.",
+    "amount_inr": 202.29,
+    "amount_usd": 2.42748,
+    "currency": "USD",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-02T15:02:41",
+      "end": "2025-05-02T16:02:41"
+    }
+  },
+  {
+    "id": "E3902",
+    "sku": "SKU2743",
+    "account": "AC93426",
+    "type": "support",
+    "notes": "Behind each listen long beat.",
+    "amount_inr": 102.57,
+    "amount_usd": 1.23084,
+    "currency": "INR",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-02T07:51:45",
+      "end": "2025-05-02T12:51:45"
+    }
+  },
+  {
+    "id": "E8280",
+    "sku": "SKU5146",
+    "account": "AC38798",
+    "type": "billing",
+    "notes": "Two surface laugh five I pattern.",
+    "amount_inr": 42.34,
+    "amount_usd": 0.5080800000000001,
+    "currency": "USD",
+    "duration": 5.0,
+    "time_period": {
+      "start": "2025-05-01T23:07:10",
+      "end": "2025-05-02T04:07:10"
+    }
+  },
+  {
+    "id": "E5226",
+    "sku": "SKU7433",
+    "account": "AC89636",
+    "type": "usage",
+    "notes": "Technology board teach sell.",
+    "amount_inr": 289.43,
+    "amount_usd": 3.47316,
+    "currency": "USD",
+    "duration": 1.0,
+    "time_period": {
+      "start": "2025-05-01T19:06:37",
+      "end": "2025-05-01T20:06:37"
+    }
+  },
+  {
+    "id": "E1815",
+    "sku": "SKU6481",
+    "account": "AC78976",
+    "type": "billing",
+    "notes": "Without agreement happen pass face able forward.",
+    "amount_inr": 214.09,
+    "amount_usd": 2.56908,
+    "currency": "INR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-01T18:58:02",
+      "end": "2025-05-01T21:58:02"
+    }
+  },
+  {
+    "id": "E123",
+    "sku": "SKU456",
+    "account": "AC789",
+    "type": "billing",
+    "notes": null,
+    "amount_inr": 199.99,
+    "amount_usd": 2.39988,
+    "currency": "USD",
+    "duration": 2.0,
+    "time_period": {
+      "start": "2025-05-01T10:00:00",
+      "end": "2025-05-01T12:00:00"
+    }
+  },
+  {
+    "id": "E5539",
+    "sku": "SKU2589",
+    "account": "AC63057",
+    "type": "billing",
+    "notes": "Agreement option these truth three action.",
+    "amount_inr": 187.09,
+    "amount_usd": 2.24508,
+    "currency": "INR",
+    "duration": 3.0,
+    "time_period": {
+      "start": "2025-05-01T04:21:59",
+      "end": "2025-05-01T07:21:59"
+    }
+  }
+]
