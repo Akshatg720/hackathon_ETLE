@@ -407,15 +407,16 @@
                         <select class="transform-type mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                             <option value="arithmetic">Arithmetic Operation</option>
                             <option value="aggregate">Aggregate Operation</option>
+                            <option value="filter">Filter Operation</option>
                             <option value="custom_file">Custom File</option>
                         </select>
                     </div>
-                    <div>
+                    <div class="output-column-container">
                         <label class="block text-sm font-medium text-gray-700">Output Column</label>
                         <input type="text" class="transform-output mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                     </div>
                 </div>
-                <div class="mt-4">
+                <div class="columns-container mt-4">
                     <label class="block text-sm font-medium text-gray-700">Columns</label>
                     <input type="text" class="transform-columns mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Comma-separated column names">
                 </div>
@@ -446,6 +447,42 @@
                         </div>
                     </div>
 
+                    <!-- Filter Operation Options -->
+                    <div class="filter-options hidden">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Column to Filter</label>
+                                <input type="text" class="filter-column mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Column name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Operator</label>
+                                <select class="filter-operator mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    <option value=">">Greater Than</option>
+                                    <option value=">=">Greater Than or Equal</option>
+                                    <option value="<">Less Than</option>
+                                    <option value="<=">Less Than or Equal</option>
+                                    <option value="==">Equal To</option>
+                                    <option value="!=">Not Equal To</option>
+                                    <option value="contains">Contains</option>
+                                    <option value="starts_with">Starts With</option>
+                                    <option value="ends_with">Ends With</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700">Value</label>
+                            <input type="text" class="filter-value mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Value to compare against">
+                        </div>
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700">Value Type</label>
+                            <select class="filter-value-type mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                <option value="string">String</option>
+                                <option value="number">Number</option>
+                                <option value="date">Date</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <!-- Custom File Options -->
                     <div class="custom-file-options hidden">
                         <div class="mt-4">
@@ -472,12 +509,25 @@
             const arithmeticOptions = transformDiv.querySelector('.arithmetic-options');
             const aggregateOptions = transformDiv.querySelector('.aggregate-options');
             const customFileOptions = transformDiv.querySelector('.custom-file-options');
+            const filterOptions = transformDiv.querySelector('.filter-options');
+            const outputColumnContainer = transformDiv.querySelector('.output-column-container');
+            const columnsContainer = transformDiv.querySelector('.columns-container');
 
             typeSelect.addEventListener('change', (e) => {
                 optionsDiv.classList.remove('hidden');
                 arithmeticOptions.classList.add('hidden');
                 aggregateOptions.classList.add('hidden');
                 customFileOptions.classList.add('hidden');
+                filterOptions.classList.add('hidden');
+                
+                // Show/hide output column and columns input based on transformation type
+                if (e.target.value === 'filter') {
+                    outputColumnContainer.classList.add('hidden');
+                    columnsContainer.classList.add('hidden');
+                } else {
+                    outputColumnContainer.classList.remove('hidden');
+                    columnsContainer.classList.remove('hidden');
+                }
                 
                 switch (e.target.value) {
                     case 'arithmetic':
@@ -488,6 +538,9 @@
                         break;
                     case 'custom_file':
                         customFileOptions.classList.remove('hidden');
+                        break;
+                    case 'filter':
+                        filterOptions.classList.remove('hidden');
                         break;
                 }
             });
@@ -541,25 +594,36 @@
             // Update transformations with specific options
             config.transform.transformations = [];
             document.querySelectorAll('#transformationsContainer > div').forEach(div => {
+                const transformType = div.querySelector('.transform-type').value;
                 const transform = {
-                    type: div.querySelector('.transform-type').value,
-                    columns: div.querySelector('.transform-columns').value.split(',').map(c => c.trim()),
-                    output_column: div.querySelector('.transform-output').value
+                    type: transformType
                 };
 
                 // Add type-specific options
-                switch (transform.type) {
+                switch (transformType) {
                     case 'arithmetic':
+                        transform.columns = div.querySelector('.transform-columns').value.split(',').map(c => c.trim());
+                        transform.output_column = div.querySelector('.transform-output').value;
                         transform.operation = div.querySelector('.arithmetic-operation').value;
                         break;
                     case 'aggregate':
+                        transform.columns = div.querySelector('.transform-columns').value.split(',').map(c => c.trim());
+                        transform.output_column = div.querySelector('.transform-output').value;
                         transform.operation = div.querySelector('.aggregate-operation').value;
                         const groupBy = div.querySelector('.group-by-columns').value;
                         if (groupBy) {
                             transform.group_by = groupBy.split(',').map(c => c.trim());
                         }
                         break;
+                    case 'filter':
+                        transform.column = div.querySelector('.filter-column').value;
+                        transform.operator = div.querySelector('.filter-operator').value;
+                        transform.value = div.querySelector('.filter-value').value;
+                        transform.value_type = div.querySelector('.filter-value-type').value;
+                        break;
                     case 'custom_file':
+                        transform.columns = div.querySelector('.transform-columns').value.split(',').map(c => c.trim());
+                        transform.output_column = div.querySelector('.transform-output').value;
                         transform.file_path = div.querySelector('.custom-file-path').value;
                         transform.function_name = div.querySelector('.custom-function-name').value;
                         const paramsText = div.querySelector('.custom-parameters').value;

@@ -60,10 +60,10 @@ def transform(transform_config: Union[str, Dict]) -> pd.DataFrame:
     
     for transform in transformations:
         transform_type = transform['type']
-        columns = transform['columns']
-        output_column = transform['output_column']
         
         if transform_type == 'arithmetic':
+            columns = transform['columns']
+            output_column = transform['output_column']
             operation = transform['operation']
             if operation == 'add':
                 df[output_column] = df[columns[0]] + df[columns[1]]
@@ -75,6 +75,8 @@ def transform(transform_config: Union[str, Dict]) -> pd.DataFrame:
                 df[output_column] = df[columns[0]] / df[columns[1]]
                 
         elif transform_type == 'aggregate':
+            columns = transform['columns']
+            output_column = transform['output_column']
             operation = transform['operation']
             group_by = transform.get('group_by', [])
             if operation == 'sum':
@@ -90,7 +92,41 @@ def transform(transform_config: Union[str, Dict]) -> pd.DataFrame:
                 agg_df.columns = [output_column]
                 df = agg_df.reset_index()
                 
+        elif transform_type == 'filter':
+            column = transform['column']
+            operator = transform['operator']
+            value = transform['value']
+            value_type = transform['value_type']
+            
+            # Convert value to appropriate type
+            if value_type == 'number':
+                value = float(value)
+            elif value_type == 'date':
+                value = pd.to_datetime(value)
+            
+            # Apply filter based on operator
+            if operator == '>':
+                df = df[df[column] > value]
+            elif operator == '>=':
+                df = df[df[column] >= value]
+            elif operator == '<':
+                df = df[df[column] < value]
+            elif operator == '<=':
+                df = df[df[column] <= value]
+            elif operator == '==':
+                df = df[df[column] == value]
+            elif operator == '!=':
+                df = df[df[column] != value]
+            elif operator == 'contains':
+                df = df[df[column].str.contains(value, na=False)]
+            elif operator == 'starts_with':
+                df = df[df[column].str.startswith(value, na=False)]
+            elif operator == 'ends_with':
+                df = df[df[column].str.endswith(value, na=False)]
+                
         elif transform_type == 'custom_file':
+            columns = transform['columns']
+            output_column = transform['output_column']
             file_path = transform['file_path']
             function_name = transform['function_name']
             parameters = transform.get('parameters', {})
