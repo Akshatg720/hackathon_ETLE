@@ -30,6 +30,79 @@ def get_nested_value(data: Dict, key_path: str) -> any:
             
     return current
 
+def build_where_clause(conditions: List[Dict]) -> str:
+    """
+    Build WHERE clause from conditions.
+    
+    Args:
+        conditions: List of condition dictionaries
+    
+    Returns:
+        str: WHERE clause string
+    """
+    if not conditions:
+        return ""
+        
+    where_parts = []
+    for condition in conditions:
+        column = condition['column']
+        operator = condition['operator']
+        value = condition['value']
+        
+        # Handle different value types
+        if isinstance(value, str):
+            value = f"'{value}'"
+        elif value is None:
+            value = "NULL"
+            
+        where_parts.append(f"{column} {operator} {value}")
+    
+    return " WHERE " + " AND ".join(where_parts)
+
+def build_order_by_clause(order_by: List[Dict]) -> str:
+    """
+    Build ORDER BY clause.
+    
+    Args:
+        order_by: List of order by dictionaries
+    
+    Returns:
+        str: ORDER BY clause string
+    """
+    if not order_by:
+        return ""
+        
+    order_parts = []
+    for order in order_by:
+        column = order['column']
+        direction = order.get('direction', 'ASC')
+        order_parts.append(f"{column} {direction}")
+    
+    return " ORDER BY " + ", ".join(order_parts)
+
+def build_limit_clause(limit: Dict) -> str:
+    """
+    Build LIMIT clause.
+    
+    Args:
+        limit: Limit configuration dictionary
+    
+    Returns:
+        str: LIMIT clause string
+    """
+    if not limit:
+        return ""
+        
+    offset = limit.get('offset', 0)
+    count = limit.get('count')
+    
+    if count is None:
+        return ""
+        
+    if offset > 0:
+        return f" LIMIT {offset}, {count}"
+    return f" LIMIT {count}"
+
 def extract_from_mysql(config: Dict) -> pd.DataFrame:
     """
     Extract data from MySQL database based on configuration.
@@ -55,8 +128,20 @@ def extract_from_mysql(config: Dict) -> pd.DataFrame:
         columns = config['columns']
         column_names = [col['name'] for col in columns]
         
-        # Build the SELECT query
+        # Build the base SELECT query
         query = f"SELECT {', '.join(column_names)} FROM {mysql_config['table']}"
+        
+        # Add WHERE clause if conditions are specified
+        if 'conditions' in config:
+            query += build_where_clause(config['conditions'])
+        
+        # Add ORDER BY clause if specified
+        if 'order_by' in config:
+            query += build_order_by_clause(config['order_by'])
+        
+        # Add LIMIT clause if specified
+        if 'limit' in config:
+            query += build_limit_clause(config['limit'])
         
         # Execute query and fetch data
         cursor = connection.cursor(dictionary=True)
